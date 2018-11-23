@@ -1,0 +1,7 @@
+bundle/*
+plugged/*
+!/backup/.keep
+!/plugged/.keep
+
+.netrwhist
+.DS_Store
