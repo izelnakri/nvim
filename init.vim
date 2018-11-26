@@ -66,31 +66,5 @@ let g:fzf_layout = { 'down': '~20%' }
 
 command! MakeTags !ctags -R .
 set background=dark
-colorscheme birds-of-paradise
-
-let s:color_blue=' ctermfg=024 ctermbg=NONE cterm=NONE guifg=#6C99BB guibg=NONE'
-let s:color_red=' ctermfg=124 ctermbg=NONE cterm=NONE guifg=#EF5D32 guibg=NONE'
-let s:color_orange= ' ctermfg=208 ctermbg=NONE cterm=NONE guifg=#EFAC32 guibg=NONE'
-
-" hi def link jsObjectProp Identifier
-exec 'hi Boolean' . s:color_blue
-exec 'hi Character' . s:color_blue
-exec 'hi Constant' . s:color_blue
-exec 'hi Float' . s:color_blue
-exec 'hi Number' . s:color_blue
-exec 'hi Directory' . s:color_blue
-
-exec 'hi Conditional' . s:color_red
-exec 'hi Operator' . s:color_red
-exec 'hi Statement' . s:color_red
-exec 'hi Identifier' . s:color_red
-exec 'hi PreProc' . s:color_red
-exec 'hi Keyword' . s:color_red
-
-exec 'hi Function' . s:color_orange
-exec 'hi Type' . s:color_orange
-exec 'hi Tag' . s:color_orange
-exec 'hi rubyFunction' . s:color_orange
-exec 'hi cssFunctionName' . s:color_orange
-exec 'hi cssPseudoClassId' . s:color_orange
-exec 'hi cssClassName' . s:color_orange
+source ~/.config/nvim/colors/default.vim
+source ~/.config/nvim/colors/javascript.vim
