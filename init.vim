@@ -7,11 +7,8 @@ source ~/.config/nvim/functions.vim
 source ~/.config/nvim/bindings.vim
 
 set t_Co=256
-set guifont=Meslo\ LG\ L\ DZ:h11
-" alternatives: Consolas, Monaco
 
 " Better line-height
-set linespace=7
 set guioptions-=r
 set guioptions-=L
 
@@ -51,6 +48,8 @@ set hlsearch
 let g:pymode_lint = 0
 let g:NERDTreeHijackNetrw=0
 let g:NERDTreeChDirMode=2
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
 
 " FZF
 let g:fzf_layout = { 'down': '~20%' }
@@ -65,6 +64,11 @@ let g:fzf_layout = { 'down': '~20%' }
 " https://github.com/NLKNguyen/papercolor-theme
 
 command! MakeTags !ctags -R .
+
 set background=dark
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 source ~/.config/nvim/colors/default.vim
 source ~/.config/nvim/colors/javascript.vim

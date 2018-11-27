@@ -1,3 +1,4 @@
+:let mapleader = "\<Space>"
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " General bindings

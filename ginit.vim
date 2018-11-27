@@ -1,7 +1,5 @@
 set t_Co=256
-"  set guifont=Meslo\ LG\ L\ DZ:h40
-" set guifont=Menlo:h14
-" alternatives: Consolas, Monaco
+set guifont=MesloLGLDZ_Nerd_Font:h11
 
 " Better line-height
 set linespace=7
