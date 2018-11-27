@@ -12,7 +12,7 @@ exec 'hi Constant' . s:color_darkblue
 exec 'hi Float' . s:color_darkblue
 exec 'hi Number' . s:color_darkblue
 exec 'hi Directory' . s:color_darkblue
-
+exec 'hi NonText' . s:color_darkblue
 " used in modulenamespace:
 exec 'hi Type' . s:color_blue
 

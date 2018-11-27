@@ -1,4 +1,5 @@
 :let mapleader = "\<Space>"
+
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " General bindings
@@ -25,13 +26,12 @@ nmap <silent> <C-e>l :wincmd l<CR>
 " map <C-l>      :wincmd l<CR>
 
 " NERDTree
-" map <Leader>nf :NERDTreeFind<CR>
-" map <Leader>nf :NERDTreeFind<CR>
-" map <Leader>nt :NERDTreeToggle<CR>
+map <Leader>nf :NERDTreeFind<CR>
+map <Leader>nt :NERDTreeToggle<CR>
 
 " FZF - https://github.com/junegunn/fzf/blob/master/README-VIM.md
-nmap <Leader>p  :FZF<CR>
-" nmap <Leader>b  :FZF Buffers<CR>
+nmap <Leader>p  :Files<CR>
+nmap <Leader>b  :Buffers<CR>
  
 nnoremap <silent> <Leader>b :call fzf#run({
 \   'source':  reverse(BufferList()),

@@ -22,10 +22,12 @@ Plug 'scrooloose/nerdtree'
 " Languages
 Plug 'python-mode/python-mode', { 'branch': 'master' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
+" Plug 'HerringtonDarkholme/yats'
 Plug 'othree/es.next.syntax.vim'
 Plug 'elixir-editors/vim-elixir'
 Plug 'slashmili/alchemist.vim'
 Plug 'ryanoasis/vim-devicons'
+" maybe add ultisnips, customize fzf for bat and ripgrep
 call plug#end()
 
 autocmd StdinReadPre * let s:std_in=1
