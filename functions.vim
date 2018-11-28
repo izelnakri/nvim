@@ -34,3 +34,6 @@ endfunction
 function! BufferOpen(e)
   execute 'buffer' matchstr(a:e, '^[ 0-9]*')
 endfunction
+
+
+" Document :Gbrowse, :Gblame
