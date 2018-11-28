@@ -45,3 +45,6 @@ exec 'hi CursorLineNr ' . s:color_orange
 exec 'hi CursorLine ctermbg=234 cterm=NONE'
 exec 'hi SignColumn ctermfg=240 ctermbg=NONE cterm=NONE guifg=#585858 guibg=NONE'
 exec 'hi LineNr ctermfg=240 ctermbg=NONE cterm=NONE guifg=#585858 guibg=NONE'
+
+highlight VertSplit ctermbg=234
+highlight VertSplit ctermfg=234

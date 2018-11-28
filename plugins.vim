@@ -38,12 +38,12 @@ let g:NERDTreeHijackNetrw=0
 let g:NERDTreeChDirMode=2
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
+let g:deoplete#enable_at_startup = 1
 
 " NerdTree open directory with tree:
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-highlight VertSplit ctermbg=024
-highlight VertSplit ctermfg=024
+highlight VertSplit ctermbg=024 highlight VertSplit ctermfg=024
 
 " Vim quits when NerdTree is the only thing left:
 autocmd StdinReadPre * let s:std_in=1
@@ -81,3 +81,4 @@ let g:lightline = {
 " https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
 
 " https://github.com/tpope/vim-surround
+" " maybe syntastic, vim-test, supertab?, check youtube test traversal
