@@ -4,12 +4,14 @@ Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim' " TODO: customize this further Lead-P selection should prefill right side, advanced ripgrep, search/replace
 Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree' 
+Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'izelnakri/nerdtree-git-plugin'
+Plug 'brooth/far.vim'
 
 " Colors
-Plug 'sonph/onehalf'
+" Plug 'sonph/onehalf'
 
 " Handyness
 Plug 'w0rp/ale'                                               " Linters
@@ -17,22 +19,20 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'                                 " GIT gutter
 Plug 'tpope/vim-rhubarb'                                      " :Gbrowse
 Plug 'tpope/vim-eunuch'                                       " UNIX commands like :SudoWrite, :Rename, :Delete
-Plug 'chrisbra/NrrwRgn'                                       " TODO: Narrow Region Plugin
-Plug 'terryma/vim-multiple-cursors'                           " TODO:
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " TODO: AutoComplete framework Languages Plug 'python-mode/python-mode', { 'branch': 'master' }
+Plug 'terryma/vim-multiple-cursors'                           " NOTE: <C-n> is the magic
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } 
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-" Plug 'HerringtonDarkholme/yats' " Typescript syntax
 Plug 'othree/es.next.syntax.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'elixir-editors/vim-elixir'
-Plug 'slashmili/alchemist.vim' " TODO
+Plug 'slashmili/alchemist.vim' " TODO: learn this
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'leafgarland/typescript-vim'
+" Plug 'HerringtonDarkholme/yats' " Typescript syntax
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'jparise/vim-graphql'
 Plug 'rust-lang/rust.vim'
-" maybe add minimap, ultisnips, customize fzf for bat and ripgrep
-" customize git plugin to show the recent branch
+" ultisnips check nerdcommenter, vim-surround
 
 call plug#end()
 
@@ -41,6 +41,15 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeHijackNetrw=0
 let g:NERDTreeChDirMode=2
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:NERDTreeGitStatusNodeColorization = 1
+let g:NERDTreeGitStatusWithFlags = 0
+let g:NERDTreeColorMapCustom = {
+    \ "Modified"  : "208",
+    \ "Staged"    : "029",
+    \ "Untracked" : "035", 
+    \ "Dirty"     : "208",  
+    \ "Clean"     : "254"
+    \ }  
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:deoplete#enable_at_startup = 1
 
@@ -53,25 +62,21 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " FZF configurations:
-let g:fzf_layout = { 'down': '~30%', 'window': '--reverse'  }
+let g:fzf_layout = { 'down': '~30%' }
 let g:fzf_files_options = ['--reverse']
-" let g:fzf_action = {
-"   \ 'ctrl-t': 'tab split',
-"   \ 'ctrl-x': 'split',
-"   \ 'ctrl-v': 'vsplit' }
-
+let g:fzf_action = { 'ctrl-t': 'tab split' }
+let $FZF_DEFAULT_OPTS = '--reverse'
 let g:lightline = {
   \ 'colorscheme': 'powerline',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+  \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ]
   \ },
   \ 'component_function': {
-  \   'gitbranch': 'fugitive#head'
-  \ },
+  \   'gitbranch': 'fugitive#head',
+  \   'relativeFileName': 'LightLineFilename'
+  \ }
 \ }
 
-" https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
-
 " https://github.com/tpope/vim-surround
-" " maybe syntastic, vim-test, supertab?, check youtube test traversal
+" " maybe syntastic, vim-test, supertab?, nerdCommenter, check youtube test traversal

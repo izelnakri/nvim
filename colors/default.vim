@@ -46,5 +46,11 @@ exec 'hi CursorLine ctermbg=234 cterm=NONE'
 exec 'hi SignColumn ctermfg=240 ctermbg=NONE cterm=NONE guifg=#585858 guibg=NONE'
 exec 'hi LineNr ctermfg=240 ctermbg=NONE cterm=NONE guifg=#585858 guibg=NONE'
 
-highlight VertSplit ctermbg=234
-highlight VertSplit ctermfg=234
+hi Search ctermfg=NONE ctermbg=029 cterm=NONE guifg=NONE guibg=00875f
+hi VertSplit ctermbg=234 ctermfg=234
+hi ColorColumn ctermbg=234
+set cc=100
+
+highlight Pmenu ctermbg=30 ctermfg=254 guifg=#E6E1C4 guibg=#008787
+highlight PmenuSel ctermbg=37 ctermfg=254 guifg=#E6E1C4 guibg=#00afaf
+" highlight PmenuSbar ctermbg=0 guibg=#d6d6d6

@@ -1,5 +1,4 @@
 :let mapleader = "\<Space>"
-" TODO: customize Rg! right pane preview left search results
 " implement search and replace
 
 command! -bang -nargs=* Rg
@@ -20,9 +19,13 @@ map <Leader>h  :nohl<CR>
 map <Tab>      ==
 map qq         :bp<CR>:bd #<CR>
 
-" nmap <CR> o<Esc>
+nnoremap <Leader>s :%s//gc<left><left><left>
+nnoremap <Leader><C-s> :Far 
+nnoremap <Leader>g :Far 
+
+nmap <CR> o<Esc>
 " imap ii <Esc>
-nmap <Leader>' :s/\'\(.*\)\'/\"\1\"<CR>:nohl<CR>
+nmap <Leader>' :s/\'\(.*\)\'/\"\1\"<CR>:nohl<CR> " TODO: check what this is
 nmap <space> :w<CR>
 
 map <F5> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
@@ -33,13 +36,15 @@ nmap <silent> <C-e>j :wincmd j<CR>
 nmap <silent> <C-e>h :wincmd h<CR>
 nmap <silent> <C-e>l :wincmd l<CR>
 
-" map <C-k>      :wincmd j<CR>
-" map <C-h>      :wincmd h<CR>
-" map <C-l>      :wincmd l<CR>
+map <C-k>      :wincmd j<CR>
+map <C-h>      :wincmd h<CR>
+map <C-l>      :wincmd l<CR>
+map <C-w>      <C-w><C-w>
 
 " NERDTree
 map <Leader>nf :NERDTreeFind<CR>
 map <Leader>nt :NERDTreeToggle<CR>
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p> " refreshes Nerdtree index
 
 " FZF - https://github.com/junegunn/fzf/blob/master/README-VIM.md
 nmap <Leader>p  :Files<CR>
