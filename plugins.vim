@@ -19,20 +19,23 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'                                 " GIT gutter
 Plug 'tpope/vim-rhubarb'                                      " :Gbrowse
 Plug 'tpope/vim-eunuch'                                       " UNIX commands like :SudoWrite, :Rename, :Delete
+Plug 'tpope/vim-surround'                                     " cs$, cst$, ds$, ysiw$, Visual MODE: S$ 
 Plug 'terryma/vim-multiple-cursors'                           " NOTE: <C-n> is the magic
+Plug 'scrooloose/nerdcommenter'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } 
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/es.next.syntax.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'elixir-editors/vim-elixir'
-Plug 'slashmili/alchemist.vim' " TODO: learn this
+Plug 'slashmili/alchemist.vim' 
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'leafgarland/typescript-vim'
 " Plug 'HerringtonDarkholme/yats' " Typescript syntax
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'jparise/vim-graphql'
 Plug 'rust-lang/rust.vim'
-" ultisnips check nerdcommenter, vim-surround
+Plug 'ervandew/supertab'
+Plug 'janko-m/vim-test'
 
 call plug#end()
 
@@ -52,8 +55,9 @@ let g:NERDTreeColorMapCustom = {
     \ }  
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:deoplete#enable_at_startup = 1
+let g:NERDSpaceDelims = 1
 
-" NerdTree open directory with tree:
+" NerdTree opens automatically when open target is a directory:
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
@@ -78,5 +82,5 @@ let g:lightline = {
   \ }
 \ }
 
-" https://github.com/tpope/vim-surround
-" " maybe syntastic, vim-test, supertab?, nerdCommenter, check youtube test traversal
+" NOTE: maybe in future: ultisnips, 
+"check youtube test traversal

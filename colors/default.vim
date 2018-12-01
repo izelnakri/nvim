@@ -43,7 +43,7 @@ exec 'hi Comment' . s:color_brown
 exec 'hi MatchParen  ctermfg=254 ctermbg=137 cterm=NONE guifg=#E6E1C4 guibg=#947659'
 exec 'hi CursorLineNr ' . s:color_orange
 exec 'hi CursorLine ctermbg=234 cterm=NONE'
-exec 'hi SignColumn ctermfg=240 ctermbg=NONE cterm=NONE guifg=#585858 guibg=NONE'
+exec 'hi SignColumn ctermfg=245 ctermbg=NONE cterm=NONE guifg=#585858 guibg=NONE'
 exec 'hi LineNr ctermfg=240 ctermbg=NONE cterm=NONE guifg=#585858 guibg=NONE'
 
 hi Search ctermfg=NONE ctermbg=029 cterm=NONE guifg=NONE guibg=00875f
