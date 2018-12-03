@@ -47,6 +47,10 @@ map <C-h>      :wincmd h<CR>
 map <C-l>      :wincmd l<CR>
 map <C-w>      <C-w><C-w>
 
+" Ctag navigation, ctrl+\ -> opens tag in new tab, Alt+] opens tag vsplit 
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
 " NERDTree
 map <Leader>nf :NERDTreeFind<CR>
 map <Leader>nt :NERDTreeToggle<CR>
@@ -72,3 +76,6 @@ nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
+
+"let test#neovim#term_position = "topleft"
+

@@ -46,7 +46,8 @@ exec 'hi CursorLine ctermbg=234 cterm=NONE'
 exec 'hi SignColumn ctermfg=245 ctermbg=NONE cterm=NONE guifg=#585858 guibg=NONE'
 exec 'hi LineNr ctermfg=240 ctermbg=NONE cterm=NONE guifg=#585858 guibg=NONE'
 
-hi Search ctermfg=NONE ctermbg=029 cterm=NONE guifg=NONE guibg=00875f
+hi Search ctermfg=NONE ctermbg=055 cterm=NONE guifg=NONE guibg=#5f00af
+hi SearchCurrent ctermfg=NONE ctermbg=107 cterm=NONE guifg=NONE guibg=#87af5f
 hi VertSplit ctermbg=234 ctermfg=234
 hi ColorColumn ctermbg=234
 set cc=100

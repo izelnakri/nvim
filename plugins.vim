@@ -35,7 +35,9 @@ Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'jparise/vim-graphql'
 Plug 'rust-lang/rust.vim'
 Plug 'ervandew/supertab'
+Plug 'timakro/vim-searchant'
 Plug 'janko-m/vim-test'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 
