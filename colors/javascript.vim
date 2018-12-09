@@ -9,7 +9,8 @@ let s:color_white=' ctermfg=254 ctermbg=NONE cterm=NONE guifg=#E6E1C4 guibg=NONE
 exec 'hi javascriptFuncKeyword' . s:color_red
 exec 'hi javaScriptOpSymbols' . s:color_red
 exec 'hi javascriptCommentTodo' . s:color_red
-
+exec 'hi javascriptAsyncFuncKeyword' . s:color_red
+exec 'hi javascriptAwaitFuncKeyword' . s:color_red 
 exec 'hi javascriptEndColons' . s:color_white
 
 highlight link javascriptBraces Operator

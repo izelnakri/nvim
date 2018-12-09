@@ -1,5 +1,26 @@
 :let mapleader = "\<Space>"
 
+" persist selection for indent/dedent
+vnoremap > >gv
+vnoremap < <gv
+
+command! -bar -nargs=1 -bang Write
+  \ execute '!sudo touch %:p:h/'.(<q-args>) 
+
+" TODO: create a terminal command that opens a vsplit terminal
+" terminal navigation mapping
+
+" TODO: make this toggle terminal
+command! Terminal
+  \ execute 'set splitright' | vsplit | terminal
+
+if has('nvim')
+  tnoremap <C-w> <C-\><C-n>
+  tnoremap <Leader>k clear<CR>
+endif
+
+map <Leader>, :execute MonkeyTerminalToggle()<CR> 
+map <Leader>. :execute MonkeyTerminalInput()<CR>
 " FZF commands
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,

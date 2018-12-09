@@ -7,8 +7,9 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'izelnakri/nerdtree-git-plugin'
+Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'brooth/far.vim'
+Plug 'kassio/neoterm'
 
 " Colors
 " Plug 'sonph/onehalf'
@@ -42,6 +43,8 @@ Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 " Plugin configuration 
+let g:neoterm_shell = 'tmux'
+let g:neoterm_autoinsert=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeHijackNetrw=0
 let g:NERDTreeChDirMode=2
@@ -49,11 +52,11 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:NERDTreeGitStatusNodeColorization = 1
 let g:NERDTreeGitStatusWithFlags = 0
 let g:NERDTreeColorMapCustom = {
-    \ "Modified"  : "208",
-    \ "Staged"    : "029",
-    \ "Untracked" : "035", 
-    \ "Dirty"     : "208",  
-    \ "Clean"     : "254"
+    \ "Modified"  : ["#ff8700", "208", "NONE", "NONE"],
+    \ "Staged"    : ["#00875f", "029", "NONE", "NONE"],
+    \ "Untracked" : ["#00af5f", "035", "NONE", "NONE"],
+    \ "Dirty"     : ["#ff8700", "208", "NONE", "NONE"],
+    \ "Clean"     : ["#e4e4e4", "254", "NONE", "NONE"]
     \ }  
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:deoplete#enable_at_startup = 1
