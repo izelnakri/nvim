@@ -15,12 +15,12 @@ command! Terminal
   \ execute 'set splitright' | vsplit | terminal
 
 if has('nvim')
-  tnoremap <C-w> <C-\><C-n>
+  tnoremap <C-w> <C-\><C-n>:wincmd h<CR>
   tnoremap <Leader>k clear<CR>
 endif
 
 map <Leader>, :execute MonkeyTerminalToggle()<CR> 
-map <Leader>. :execute MonkeyTerminalInput()<CR>
+map <Leader>. :execute MonkeyTerminalInput()<CR>i
 " FZF commands
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,

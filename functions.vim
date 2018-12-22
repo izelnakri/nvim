@@ -75,6 +75,13 @@ function! MonkeyTerminalToggle()
   endif
 endfunction
 
+function! MonkeyTerminalInput()
+	let windowNr = bufwinnr("Terminal 1")
+  if windowNr > 0
+    execute windowNr 'wincmd w'
+  endif
+endfunction
+
 function! MonkeyTerminalClose()
   if win_gotoid(s:monkey_terminal_window)
     execute "Ttoggle"
