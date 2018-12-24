@@ -10,6 +10,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'brooth/far.vim'
 Plug 'kassio/neoterm'
+Plug 'vim-syntastic/syntastic'
 
 " Colors
 " Plug 'sonph/onehalf'
@@ -75,6 +76,7 @@ let g:fzf_layout = { 'down': '~30%' }
 let g:fzf_files_options = ['--reverse']
 let g:fzf_action = { 'ctrl-t': 'tab split' }
 let $FZF_DEFAULT_OPTS = '--reverse'
+
 let g:lightline = {
   \ 'colorscheme': 'powerline',
   \ 'active': {

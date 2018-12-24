@@ -14,9 +14,11 @@ command! -bar -nargs=1 -bang Write
 command! Terminal
   \ execute 'set splitright' | vsplit | terminal
 
+
 if has('nvim')
   tnoremap <C-w> <C-\><C-n>:wincmd h<CR>
   tnoremap <Leader>k clear<CR>
+  tnoremap <Leader>. <C-\><C-n>:execute MonkeyTerminalToggle()<CR>
 endif
 
 map <Leader>, :execute MonkeyTerminalToggle()<CR> 
@@ -78,11 +80,18 @@ map <Leader>nt :NERDTreeToggle<CR>
 nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p> " refreshes Nerdtree index
 
 " FZF - https://github.com/junegunn/fzf/blob/master/README-VIM.md
-nmap <Leader>p  :Files<CR>
-nmap <Leader>t  :Files<CR>
-nmap <Leader>f  :Rg!<CR>
-nmap <D-t>  :Files<CR>
-nmap <Leader>b  :Buffers<CR>
+function! FZFOpen(command_str)
+  if (expand('%') =~# 'NERD_tree' && winnr('$') > 1)
+    exe "normal! \<c-w>\<c-w>"
+  endif
+  exe 'normal! ' . a:command_str . "\<cr>"
+endfunction
+
+nmap <Leader>p  :call FZFOpen(':Files')<CR>
+nmap <Leader>t  :call FZFOpen(':Files')<CR>
+nmap <Leader>f  :call FZFOpen(':Rg!')<CR>
+nmap <D-t>  :call FZFOpen(':Files')<CR>
+nmap <Leader>b  :call FZFOpen(':Buffers')<CR>
  
 nnoremap <silent> <Leader>b :call fzf#run({
 \   'source':  reverse(BufferList()),
