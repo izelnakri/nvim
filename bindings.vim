@@ -14,11 +14,12 @@ command! -bar -nargs=1 -bang Write
 command! Terminal
   \ execute 'set splitright' | vsplit | terminal
 
-
 if has('nvim')
   tnoremap <C-w> <C-\><C-n>:wincmd h<CR>
+  tnoremap <Esc> <C-\><C-n>:wincmd h<CR>
   tnoremap <Leader>k clear<CR>
   tnoremap <Leader>. <C-\><C-n>:execute MonkeyTerminalToggle()<CR>
+  tnoremap <Leader>, <C-\><C-n>:execute MonkeyTerminalToggle()<CR>
 endif
 
 map <Leader>, :execute MonkeyTerminalToggle()<CR> 
@@ -44,9 +45,11 @@ inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
 " General bindings
 map <Leader>w  :w<CR>
-map <Leader>h  :nohl<CR>
+map <Leader>h  :nohl<CR><Plug>SearchantStop
 map <Tab>      ==
 map qq         :bp<CR>:bd #<CR>
+" Move vim copy to clipboard:
+set clipboard+=unnamedplus
 
 nnoremap <Leader>s :%s//gc<left><left><left>
 nnoremap <Leader><C-s> :Far 
@@ -93,6 +96,27 @@ nmap <Leader>f  :call FZFOpen(':Rg!')<CR>
 nmap <D-t>  :call FZFOpen(':Files')<CR>
 nmap <Leader>b  :call FZFOpen(':Buffers')<CR>
  
+" TODO: DOUGS plugin:
+if exists('loaded_easydir')
+  finish
+endif
+let loaded_easydir = 1
+
+augroup easydir
+  au!
+  au BufAdd * call FZFOpen('') 
+  au BufWritePre,FileWritePre * call <SID>create_and_save_directory()
+augroup END
+
+function <SID>create_and_save_directory()
+  let s:directory = expand('<afile>:p:h')
+  if s:directory !~# '^\(scp\|ftp\|dav\|fetch\|ftp\|http\|rcp\|rsync\|sftp\|file\):'
+  \ && !isdirectory(s:directory)
+    call mkdir(s:directory, 'p')
+  endif
+endfunction
+
+
 nnoremap <silent> <Leader>b :call fzf#run({
 \   'source':  reverse(BufferList()),
 \   'sink':    function('BufferOpen'),

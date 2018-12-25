@@ -72,6 +72,7 @@ function! MonkeyTerminalToggle()
     call MonkeyTerminalClose()
   else
     call MonkeyTerminalOpen()
+    execute "startinsert!"
   endif
 endfunction
 

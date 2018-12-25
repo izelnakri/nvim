@@ -21,6 +21,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'                                 " GIT gutter
 Plug 'tpope/vim-rhubarb'                                      " :Gbrowse
 Plug 'tpope/vim-eunuch'                                       " UNIX commands like :SudoWrite, :Rename, :Delete
+" Plug 'duggiefresh/vim-easydir'
 Plug 'tpope/vim-surround'                                     " cs$, cst$, ds$, ysiw$, Visual MODE: S$ 
 Plug 'terryma/vim-multiple-cursors'                           " NOTE: <C-n> is the magic
 Plug 'scrooloose/nerdcommenter'
@@ -50,6 +51,7 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeHijackNetrw=0
 let g:NERDTreeChDirMode=2
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let NERDTreeShowHidden=1
 let g:NERDTreeGitStatusNodeColorization = 1
 let g:NERDTreeGitStatusWithFlags = 0
 let g:NERDTreeColorMapCustom = {
