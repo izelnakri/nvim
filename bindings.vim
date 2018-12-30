@@ -16,9 +16,7 @@ command! Terminal
 
 if has('nvim')
   tnoremap <C-w> <C-\><C-n>:wincmd h<CR>
-  tnoremap <Esc> <C-\><C-n>:wincmd h<CR>
   tnoremap <Leader>k clear<CR>
-  tnoremap <Leader>. <C-\><C-n>:execute MonkeyTerminalToggle()<CR>
   tnoremap <Leader>, <C-\><C-n>:execute MonkeyTerminalToggle()<CR>
 endif
 
@@ -48,6 +46,8 @@ map <Leader>w  :w<CR>
 map <Leader>h  :nohl<CR><Plug>SearchantStop
 map <Tab>      ==
 map qq         :bp<CR>:bd #<CR>
+map <silent> <C-a> gg<S-v>G
+map <silent> <C-s> %
 " Move vim copy to clipboard:
 set clipboard+=unnamedplus
 

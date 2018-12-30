@@ -40,7 +40,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'ervandew/supertab'
 Plug 'timakro/vim-searchant'
 Plug 'janko-m/vim-test'
-Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 
@@ -72,6 +71,8 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " Vim quits when NerdTree is the only thing left:
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+let g:rustfmt_autosave = 1
 
 " FZF configurations:
 let g:fzf_layout = { 'down': '~30%' }
