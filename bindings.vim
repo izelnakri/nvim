@@ -49,7 +49,8 @@ map qq         :bp<CR>:bd #<CR>
 map <silent> <C-a> gg<S-v>G
 map <silent> <C-s> %
 " Move vim copy to clipboard:
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
+set clipboard^=unnamed,unnamedplus
 
 nnoremap <Leader>s :%s//gc<left><left><left>
 nnoremap <Leader><C-s> :Far 

@@ -9,7 +9,10 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'brooth/far.vim'
+Plug 'tpope/vim-repeat'
+" Check if neoterm needed!
 Plug 'kassio/neoterm'
+" Syntastic might not needed!
 Plug 'vim-syntastic/syntastic'
 
 " Colors
