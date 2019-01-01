@@ -1,10 +1,10 @@
-let s:color_darkblue=' ctermfg=024 ctermbg=NONE cterm=NONE guifg=#6C99BB guibg=NONE'
-let s:color_blue=' ctermfg=030 ctermbg=NONE cterm=NONE guifg=#7DAF9C guibg=NONE'
-let s:color_red=' ctermfg=124 ctermbg=NONE cterm=NONE guifg=#EF5D32 guibg=NONE'
-let s:color_orange=' ctermfg=208 ctermbg=NONE cterm=NONE guifg=#EFAC32 guibg=NONE'
-let s:color_yellow=' ctermfg=227 ctermbg=NONE cterm=NONE guifg=#D9D762 guibg=NONE'
-let s:color_brown=' ctermfg=137 ctermbg=NONE cterm=NONE guifg=#947659 guibg=NONE'
-let s:color_white=' ctermfg=254 ctermbg=NONE cterm=NONE guifg=#E6E1C4 guibg=NONE'
+let s:color_darkblue=' ctermfg=024 ctermbg=NONE cterm=NONE guifg=#6C99BB guibg=NONE gui=NONE'
+let s:color_blue=' ctermfg=030 ctermbg=NONE cterm=NONE guifg=#7DAF9C guibg=NONE gui=NONE'
+let s:color_red=' ctermfg=124 ctermbg=NONE cterm=NONE guifg=#EF5D32 guibg=NONE gui=NONE'
+let s:color_orange=' ctermfg=208 ctermbg=NONE cterm=NONE guifg=#EFAC32 guibg=NONE gui=NONE'
+let s:color_yellow=' ctermfg=227 ctermbg=NONE cterm=NONE guifg=#D9D762 guibg=NONE gui=NONE'
+let s:color_brown=' ctermfg=137 ctermbg=NONE cterm=NONE guifg=#947659 guibg=NONE gui=NONE'
+let s:color_white=' ctermfg=254 ctermbg=NONE cterm=NONE guifg=#E6E1C4 guibg=NONE gui=NONE'
 
 exec 'hi Boolean' . s:color_darkblue
 exec 'hi Character' . s:color_darkblue
@@ -40,16 +40,18 @@ exec 'hi Special' . s:color_white
 
 exec 'hi Comment' . s:color_brown
 
+
 exec 'hi MatchParen  ctermfg=254 ctermbg=137 cterm=NONE guifg=#E6E1C4 guibg=#947659'
 exec 'hi CursorLineNr ' . s:color_orange
-exec 'hi CursorLine ctermbg=234 cterm=NONE'
+exec 'hi CursorLine ctermbg=234 cterm=NONE gui=NONE guibg=#1c1c1c'
 exec 'hi SignColumn ctermfg=245 ctermbg=NONE cterm=NONE guifg=#585858 guibg=NONE'
 exec 'hi LineNr ctermfg=240 ctermbg=NONE cterm=NONE guifg=#585858 guibg=NONE'
 
 hi Search ctermfg=NONE ctermbg=055 cterm=NONE guifg=NONE guibg=#5f00af
 hi SearchCurrent ctermfg=NONE ctermbg=107 cterm=NONE guifg=NONE guibg=#87af5f
-hi VertSplit ctermbg=234 ctermfg=234
-hi ColorColumn ctermbg=234
+hi VertSplit ctermbg=234 ctermfg=234 guibg=#09251f guifg=#1c1c1c
+hi ColorColumn ctermbg=234 guibg=#1c1c1c
+hi Visual ctermbg=242 guibg=#0d372d
 set cc=100
 
 highlight Pmenu ctermbg=30 ctermfg=254 guifg=#E6E1C4 guibg=#008787

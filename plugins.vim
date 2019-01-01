@@ -10,10 +10,12 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'brooth/far.vim'
 Plug 'tpope/vim-repeat'
+Plug 'lilydjwg/colorizer'
+Plug 'majutsushi/tagbar'
 " Check if neoterm needed!
 Plug 'kassio/neoterm'
 " Syntastic might not needed!
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 
 " Colors
 " Plug 'sonph/onehalf'
@@ -97,3 +99,5 @@ let g:lightline = {
 
 " NOTE: maybe in future: ultisnips, 
 "check youtube test traversal
+set termguicolors
+
