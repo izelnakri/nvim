@@ -11,17 +11,15 @@ command! -bar -nargs=1 -bang Write
 " terminal navigation mapping
 
 " TODO: make this toggle terminal
-command! Terminal
-  \ execute 'set splitright' | vsplit | terminal
+command! Terminal \ execute 'set splitright' | vsplit | terminal if has('nvim')
 
-if has('nvim')
-  tnoremap <C-w> <C-\><C-n>:wincmd h<CR>
-  tnoremap <Leader>k clear<CR>
-  tnoremap <Leader>, <C-\><C-n>:execute MonkeyTerminalToggle()<CR>
-endif
-
+  " Neoterm shortcuts
+tnoremap <C-w> <C-\><C-n>:wincmd h<CR>
+tnoremap <Leader>k clear<CR>
+tnoremap <Leader>, <C-\><C-n>:execute MonkeyTerminalToggle()<CR>
 map <Leader>, :execute MonkeyTerminalToggle()<CR> 
 map <Leader>. :execute MonkeyTerminalInput()<CR>i
+
 " FZF commands
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
@@ -46,8 +44,10 @@ map <Leader>w  :w<CR>
 map <Leader>h  :nohl<CR><Plug>SearchantStop
 map <Tab>      ==
 map qq         :bp<CR>:bd #<CR>
-map <silent> <C-a> gg<S-v>G
+map <silent> <M-a> gg<S-v>G
+inoremap <silent> <M-a> <Esc>gg<S-v>G
 map <silent> <C-s> %
+
 " Move vim copy to clipboard:
 " set clipboard+=unnamedplus
 set clipboard^=unnamed,unnamedplus
@@ -116,7 +116,6 @@ function <SID>create_and_save_directory()
     call mkdir(s:directory, 'p')
   endif
 endfunction
-
 
 nnoremap <silent> <Leader>b :call fzf#run({
 \   'source':  reverse(BufferList()),
