@@ -3,7 +3,8 @@ let mapleader = "\<Space>"
 
 
 let g:ale_linters = {
-\  'javascript': ['eslint']
+\  'javascript': ['eslint'],
+\  'handlebars': ['ember-template-lint']
 \}
 let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
@@ -46,7 +47,6 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set list listchars=tab:\ \ ,trail:·
 
 " Searching
 set incsearch

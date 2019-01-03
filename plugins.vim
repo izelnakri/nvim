@@ -13,7 +13,7 @@ Plug 'tpope/vim-repeat'
 Plug 'lilydjwg/colorizer'
 Plug 'majutsushi/tagbar'
 Plug 'benmills/vimux'
-
+Plug 'Yggdroot/indentLine'
 " Check if neoterm needed!
 Plug 'kassio/neoterm'
 " Syntastic might not needed!
@@ -53,7 +53,9 @@ Plug 'janko-m/vim-test'
 call plug#end()
 
 " Plugin configuration 
-let g:neoterm_shell = 'tmux'
+let g:indentLine_char = '┆'
+let g:indentLine_color_term=235
+let g:indentLine_color_gui='#262626'
 let g:neoterm_autoinsert=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeHijackNetrw=0
