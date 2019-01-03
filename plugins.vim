@@ -12,6 +12,8 @@ Plug 'brooth/far.vim'
 Plug 'tpope/vim-repeat'
 Plug 'lilydjwg/colorizer'
 Plug 'majutsushi/tagbar'
+Plug 'benmills/vimux'
+
 " Check if neoterm needed!
 Plug 'kassio/neoterm'
 " Syntastic might not needed!
@@ -22,6 +24,7 @@ Plug 'kassio/neoterm'
 
 " Handyness
 Plug 'w0rp/ale'                                               " Linters
+Plug 'maximbaz/lightline-ale'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'                                 " GIT gutter
 Plug 'tpope/vim-rhubarb'                                      " :Gbrowse
@@ -42,6 +45,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'jparise/vim-graphql'
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 Plug 'ervandew/supertab'
 Plug 'timakro/vim-searchant'
 Plug 'janko-m/vim-test'
@@ -89,11 +93,24 @@ let g:lightline = {
   \ 'colorscheme': 'powerline',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ]
+  \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
+  \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]]
   \ },
   \ 'component_function': {
   \   'gitbranch': 'fugitive#head',
   \   'relativeFileName': 'LightLineFilename'
+  \ },
+  \ 'component_expand': {
+  \  'linter_checking': 'lightline#ale#checking',
+  \  'linter_warnings': 'lightline#ale#warnings',
+  \  'linter_errors': 'lightline#ale#errors',
+  \  'linter_ok': 'lightline#ale#ok',
+  \ },
+  \ 'component_type': {
+  \     'linter_checking': 'left',
+  \     'linter_warnings': 'warning',
+  \     'linter_errors': 'error',
+  \     'linter_ok': 'left',
   \ }
 \ }
 

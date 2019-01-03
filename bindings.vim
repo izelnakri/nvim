@@ -1,4 +1,4 @@
-:let mapleader = "\<Space>"
+let mapleader = "\<Space>"
 
 " persist selection for indent/dedent
 vnoremap > >gv

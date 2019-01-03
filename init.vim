@@ -1,6 +1,13 @@
 " Important
 let mapleader = "\<Space>"
 
+
+let g:ale_linters = {
+\  'javascript': ['eslint']
+\}
+let g:ale_completion_enabled = 1
+let g:airline#extensions#ale#enabled = 1
+let g:ale_open_list = 1
 " Includes
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/functions.vim
@@ -26,7 +33,8 @@ filetype on
 set path+=**
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set backspace=indent,eol,start
-set backupdir=~/.config/nvim/backup
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Set encoding
 set encoding=utf-8
@@ -55,4 +63,3 @@ set background=dark
 
 source ~/.config/nvim/colors/default.vim
 source ~/.config/nvim/colors/javascript.vim
-
