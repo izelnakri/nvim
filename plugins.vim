@@ -14,13 +14,10 @@ Plug 'lilydjwg/colorizer'
 Plug 'majutsushi/tagbar'
 Plug 'benmills/vimux'
 Plug 'Yggdroot/indentLine'
+Plug 'jgdavey/tslime.vim'
+Plug 'jiangmiao/auto-pairs'
 " Check if neoterm needed!
-Plug 'kassio/neoterm'
-" Syntastic might not needed!
-" Plug 'vim-syntastic/syntastic'
-
-" Colors
-" Plug 'sonph/onehalf'
+" Plug 'kassio/neoterm'
 
 " Handyness
 Plug 'w0rp/ale'                                               " Linters
@@ -53,14 +50,15 @@ Plug 'janko-m/vim-test'
 call plug#end()
 
 " Plugin configuration 
+let g:test#strategy = "tslime"
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
 let g:indentLine_char = '┆'
 let g:indentLine_color_term=235
 let g:indentLine_color_gui='#262626'
-let g:neoterm_autoinsert=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeHijackNetrw=0
 let g:NERDTreeChDirMode=2
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let NERDTreeShowHidden=1
 let g:NERDTreeGitStatusNodeColorization = 1
 let g:NERDTreeGitStatusWithFlags = 0
@@ -71,6 +69,8 @@ let g:NERDTreeColorMapCustom = {
     \ "Dirty"     : ["#ff8700", "208", "NONE", "NONE"],
     \ "Clean"     : ["#e4e4e4", "254", "NONE", "NONE"]
     \ }  
+let g:NERDDefaultAlign = 'start'
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:deoplete#enable_at_startup = 1
 let g:NERDSpaceDelims = 1
@@ -117,6 +117,5 @@ let g:lightline = {
 \ }
 
 " NOTE: maybe in future: ultisnips, 
-"check youtube test traversal
+" check youtube test traversal
 set termguicolors
-

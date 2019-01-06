@@ -1,14 +1,13 @@
 " Important
 let mapleader = "\<Space>"
 
-
 let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'handlebars': ['ember-template-lint']
 \}
 let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
-let g:ale_open_list = 1
+let g:ale_open_list = 'on_save' 
 " Includes
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/functions.vim
@@ -47,6 +46,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+set listchars=tab:\ \ ,trail:·
 
 " Searching
 set incsearch

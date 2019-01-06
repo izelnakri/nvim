@@ -14,14 +14,14 @@ augroup CloseIfOnlyControlWinLeft
 augroup END
 
 " Tab key behaviour
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
+" function! InsertTabWrapper()
+"     let col = col('.') - 1
+"     if !col || getline('.')[col - 1] !~ '\k'
+"         return "\<tab>"
+"     else
+"         return "\<c-p>"
+"     endif
+" endfunction
 
 " Buffers
 function! BufferList()
@@ -95,3 +95,13 @@ endfunction
 "    call deoplete#custom#buffer_option('auto_complete', v:true)                                
 " endfunction
 " Document :Gbrowse, :Gblame
+" " Zoom
+function! s:zoom()
+  if winnr('$') > 1
+    tab split
+  elseif len(filter(map(range(tabpagenr('$')), 'tabpagebuflist(v:val + 1)'),
+        \ 'index(v:val, '.bufnr('').') >= 0')) > 1
+    tabclose
+  endif
+endfunction
+nnoremap <silent> <leader>z :call <sid>zoom()<cr>
