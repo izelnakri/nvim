@@ -13,7 +13,7 @@ command! -bar -nargs=1 -bang Write
 " TODO: make this toggle terminal
 command! Terminal \ execute 'set splitright' | vsplit | terminal if has('nvim')
 
-  " Neoterm shortcuts
+" Neoterm shortcuts
 tnoremap <C-w> <C-\><C-n>:wincmd h<CR>
 tnoremap <Leader>k clear<CR>
 tnoremap <Leader>, <C-\><C-n>:execute MonkeyTerminalToggle()<CR>
@@ -64,12 +64,9 @@ nmap <space> :w<CR>
 map <F5> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " Switching between buffers with arrow keys
-nmap <silent> <C-e>k :wincmd k<CR>
-nmap <silent> <C-e>j :wincmd j<CR>
 nmap <silent> <C-e>h :wincmd h<CR>
 nmap <silent> <C-e>l :wincmd l<CR>
 
-map <C-k>      :wincmd j<CR>
 map <C-h>      :wincmd h<CR>
 map <C-l>      :wincmd l<CR>
 map <C-w>      <C-w><C-w>
@@ -130,5 +127,4 @@ nmap <silent> t<C-f> :TestFile<CR>
 nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
-
-
+map <Leader>r :reg<CR>

@@ -59,7 +59,7 @@ let g:indentLine_color_gui='#262626'
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeHijackNetrw=0
 let g:NERDTreeChDirMode=2
-let NERDTreeShowHidden=1
+let g:NERDTreeShowHidden=1
 let g:NERDTreeGitStatusNodeColorization = 1
 let g:NERDTreeGitStatusWithFlags = 0
 let g:NERDTreeColorMapCustom = {
@@ -90,6 +90,8 @@ let g:fzf_layout = { 'down': '~30%' }
 let g:fzf_files_options = ['--reverse']
 let g:fzf_action = { 'ctrl-t': 'tab split' }
 let $FZF_DEFAULT_OPTS = '--reverse'
+
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 let g:lightline = {
   \ 'colorscheme': 'powerline',
