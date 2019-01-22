@@ -15,7 +15,6 @@ Plug 'majutsushi/tagbar'
 Plug 'benmills/vimux'
 Plug 'Yggdroot/indentLine'
 Plug 'jgdavey/tslime.vim'
-Plug 'jiangmiao/auto-pairs'
 " Check if neoterm needed!
 " Plug 'kassio/neoterm'
 
@@ -26,7 +25,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'                                 " GIT gutter
 Plug 'tpope/vim-rhubarb'                                      " :Gbrowse
 Plug 'tpope/vim-eunuch'                                       " UNIX commands like :SudoWrite, :Rename, :Delete
-" Plug 'duggiefresh/vim-easydir'
 Plug 'tpope/vim-surround'                                     " cs$, cst$, ds$, ysiw$, Visual MODE: S$ 
 Plug 'terryma/vim-multiple-cursors'                           " NOTE: <C-n> is the magic
 Plug 'scrooloose/nerdcommenter'
@@ -63,17 +61,17 @@ let g:NERDTreeShowHidden=1
 let g:NERDTreeGitStatusNodeColorization = 1
 let g:NERDTreeGitStatusWithFlags = 0
 let g:NERDTreeColorMapCustom = {
-    \ "Modified"  : ["#ff8700", "208", "NONE", "NONE"],
-    \ "Staged"    : ["#00875f", "029", "NONE", "NONE"],
-    \ "Untracked" : ["#00af5f", "035", "NONE", "NONE"],
-    \ "Dirty"     : ["#ff8700", "208", "NONE", "NONE"],
-    \ "Clean"     : ["#e4e4e4", "254", "NONE", "NONE"]
-    \ }  
-let g:NERDDefaultAlign = 'start'
+  \ "Modified"  : ["#ff8700", "208", "NONE", "NONE"],
+  \ "Staged"    : ["#00875f", "029", "NONE", "NONE"],
+  \ "Untracked" : ["#00af5f", "035", "NONE", "NONE"],
+  \ "Dirty"     : ["#ff8700", "208", "NONE", "NONE"],
+  \ "Clean"     : ["#e4e4e4", "254", "NONE", "NONE"]
+  \ }
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:deoplete#enable_at_startup = 1
 let g:NERDSpaceDelims = 1
+let g:NERDCommentEmptyLines = 0
 
 " NerdTree opens automatically when open target is a directory:
 autocmd StdinReadPre * let s:std_in=1

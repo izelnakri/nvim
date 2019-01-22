@@ -7,6 +7,9 @@ vnoremap < <gv
 command! -bar -nargs=1 -bang Write
   \ execute '!sudo touch %:p:h/'.(<q-args>) 
 
+command! RmSwp
+  \ execute '!rm /var/tmp/*.swp'
+
 " TODO: create a terminal command that opens a vsplit terminal
 " terminal navigation mapping
 

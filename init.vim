@@ -21,13 +21,14 @@ set guioptions-=L
 
 " Settings
 set nocompatible
+set hidden
 set ruler
 set number
 set showcmd
 set cursorline
 
 syntax enable
-filetype on
+filetype off 
 
 " General
 set path+=**
@@ -46,7 +47,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set listchars=tab:\ \ ,trail:·
+set list listchars=tab:\ \ ,trail:·
 
 " Searching
 set incsearch
