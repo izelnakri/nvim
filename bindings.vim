@@ -5,7 +5,7 @@ vnoremap > >gv
 vnoremap < <gv
 
 command! -bar -nargs=1 -bang Write
-  \ execute '!sudo touch %:p:h/'.(<q-args>) 
+  \ execute '!sudo touch %:p:h/'.(<q-args>)
 
 command! RmSwp
   \ execute '!rm /var/tmp/*.swp'
@@ -20,7 +20,7 @@ command! Terminal \ execute 'set splitright' | vsplit | terminal if has('nvim')
 tnoremap <C-w> <C-\><C-n>:wincmd h<CR>
 tnoremap <Leader>k clear<CR>
 tnoremap <Leader>, <C-\><C-n>:execute MonkeyTerminalToggle()<CR>
-map <Leader>, :execute MonkeyTerminalToggle()<CR> 
+map <Leader>, :execute MonkeyTerminalToggle()<CR>
 map <Leader>. :execute MonkeyTerminalInput()<CR>i
 
 " FZF commands
@@ -56,8 +56,8 @@ map <silent> <C-s> %
 set clipboard^=unnamed,unnamedplus
 
 nnoremap <Leader>s :%s//gc<left><left><left>
-nnoremap <Leader><C-s> :Far 
-nnoremap <Leader>g :Far 
+nnoremap <Leader><C-s> :Far
+nnoremap <Leader>g :Far
 
 nmap <CR> o<Esc>
 " imap ii <Esc>
@@ -74,7 +74,7 @@ map <C-h>      :wincmd h<CR>
 map <C-l>      :wincmd l<CR>
 map <C-w>      <C-w><C-w>
 
-" Ctag navigation, ctrl+\ -> opens tag in new tab, Alt+] opens tag vsplit 
+" Ctag navigation, ctrl+\ -> opens tag in new tab, Alt+] opens tag vsplit
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
@@ -96,7 +96,7 @@ nmap <Leader>t  :call FZFOpen(':Files')<CR>
 nmap <Leader>f  :call FZFOpen(':Rg!')<CR>
 nmap <D-t>  :call FZFOpen(':Files')<CR>
 nmap <Leader>b  :call FZFOpen(':Buffers')<CR>
- 
+
 " TODO: DOUGS plugin:
 if exists('loaded_easydir')
   finish
@@ -107,7 +107,7 @@ autocmd BufWritePre * %s/\s\+$//e " Removes trailing whitespace
 
 augroup easydir
   au!
-  au BufAdd * call FZFOpen('') 
+  au BufAdd * call FZFOpen('')
   au BufWritePre,FileWritePre * call <SID>create_and_save_directory()
 augroup END
 
@@ -130,6 +130,7 @@ nnoremap <silent> <Leader>b :call fzf#run({
 nnoremap ln :lnext<CR>
 nnoremap lp :lprevious<CR>
 nnoremap lr :lrewind<CR>
+nnoremap lc :lclose<CR>
 
 " Test bindings:
 nmap <silent> t<C-n> :TestNearest<CR>
