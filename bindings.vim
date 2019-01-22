@@ -103,6 +103,8 @@ if exists('loaded_easydir')
 endif
 let loaded_easydir = 1
 
+autocmd BufWritePre * %s/\s\+$//e " Removes trailing whitespace
+
 augroup easydir
   au!
   au BufAdd * call FZFOpen('') 
@@ -123,6 +125,11 @@ nnoremap <silent> <Leader>b :call fzf#run({
 \   'options': '+m',
 \   'down':    len(BufferList()) + 2
 \ })<CR>
+
+" Ale bindings:
+nnoremap ln :lnext<CR>
+nnoremap lp :lprevious<CR>
+nnoremap lr :lrewind<CR>
 
 " Test bindings:
 nmap <silent> t<C-n> :TestNearest<CR>

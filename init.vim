@@ -27,7 +27,7 @@ set number
 set showcmd
 set cursorline
 
-syntax enable
+syntax on
 filetype off 
 
 " General
@@ -52,6 +52,8 @@ set list listchars=tab:\ \ ,trail:·
 " Searching
 set incsearch
 set hlsearch
+set ignorecase
+set smartcase
 
 " Colorschemes
 " gruvbox, inkpot, zenburn, hybrid_material
