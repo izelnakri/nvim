@@ -10,19 +10,6 @@ command! -bar -nargs=1 -bang Write
 command! RmSwp
   \ execute '!rm /var/tmp/*.swp'
 
-" TODO: create a terminal command that opens a vsplit terminal
-" terminal navigation mapping
-
-" TODO: make this toggle terminal
-command! Terminal \ execute 'set splitright' | vsplit | terminal if has('nvim')
-
-" Neoterm shortcuts
-tnoremap <C-w> <C-\><C-n>:wincmd h<CR>
-tnoremap <Leader>k clear<CR>
-tnoremap <Leader>, <C-\><C-n>:execute MonkeyTerminalToggle()<CR>
-map <Leader>, :execute MonkeyTerminalToggle()<CR>
-map <Leader>. :execute MonkeyTerminalInput()<CR>i
-
 " FZF commands
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
@@ -61,7 +48,9 @@ nnoremap <Leader>g :Far
 
 nmap <CR> o<Esc>
 " imap ii <Esc>
-nmap <Leader>' :s/\'\(.*\)\'/\"\1\"<CR>:nohl<CR> " TODO: check what this is
+
+" TODO: check what this is:
+nmap <Leader>' :s/\'\(.*\)\'/\"\1\"<CR>:nohl<CR>
 nmap <space> :w<CR>
 
 map <F5> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
@@ -97,27 +86,7 @@ nmap <Leader>f  :call FZFOpen(':Rg!')<CR>
 nmap <D-t>  :call FZFOpen(':Files')<CR>
 nmap <Leader>b  :call FZFOpen(':Buffers')<CR>
 
-" TODO: DOUGS plugin:
-if exists('loaded_easydir')
-  finish
-endif
-let loaded_easydir = 1
-
 autocmd BufWritePre * %s/\s\+$//e " Removes trailing whitespace
-
-augroup easydir
-  au!
-  au BufAdd * call FZFOpen('')
-  au BufWritePre,FileWritePre * call <SID>create_and_save_directory()
-augroup END
-
-function <SID>create_and_save_directory()
-  let s:directory = expand('<afile>:p:h')
-  if s:directory !~# '^\(scp\|ftp\|dav\|fetch\|ftp\|http\|rcp\|rsync\|sftp\|file\):'
-  \ && !isdirectory(s:directory)
-    call mkdir(s:directory, 'p')
-  endif
-endfunction
 
 nnoremap <silent> <Leader>b :call fzf#run({
 \   'source':  reverse(BufferList()),

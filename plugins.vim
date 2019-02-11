@@ -8,6 +8,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'brooth/far.vim'
 Plug 'tpope/vim-repeat'
 Plug 'lilydjwg/colorizer'
@@ -15,8 +16,6 @@ Plug 'majutsushi/tagbar'
 Plug 'benmills/vimux'
 Plug 'Yggdroot/indentLine'
 Plug 'jgdavey/tslime.vim'
-" Check if neoterm needed!
-" Plug 'kassio/neoterm'
 
 " Handyness
 Plug 'w0rp/ale'                                               " Linters
@@ -25,21 +24,21 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'                                 " GIT gutter
 Plug 'tpope/vim-rhubarb'                                      " :Gbrowse
 Plug 'tpope/vim-eunuch'                                       " UNIX commands like :SudoWrite, :Rename, :Delete
-Plug 'tpope/vim-surround'                                     " cs$, cst$, ds$, ysiw$, Visual MODE: S$ 
+Plug 'tpope/vim-surround'                                     " cs$, cst$, ds$, ysiw$, Visual MODE: S$
 Plug 'terryma/vim-multiple-cursors'                           " NOTE: <C-n> is the magic
 Plug 'scrooloose/nerdcommenter'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'othree/es.next.syntax.vim'
+Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'elixir-editors/vim-elixir'
-Plug 'slashmili/alchemist.vim' 
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'leafgarland/typescript-vim'
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
+Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Plug 'HerringtonDarkholme/yats' " Typescript syntax
-Plug 'vim-erlang/vim-erlang-runtime'
-Plug 'jparise/vim-graphql'
-Plug 'rust-lang/rust.vim'
+Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'elixir' }
+Plug 'jparise/vim-graphql', { 'for': 'graphql' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer'
 Plug 'ervandew/supertab'
 Plug 'timakro/vim-searchant'
@@ -47,7 +46,7 @@ Plug 'janko-m/vim-test'
 
 call plug#end()
 
-" Plugin configuration 
+" Plugin configuration
 let g:test#strategy = "tslime"
 let g:tslime_always_current_session = 1
 let g:tslime_always_current_window = 1
@@ -58,16 +57,17 @@ let g:NERDTreeMinimalUI=1
 let g:NERDTreeHijackNetrw=0
 let g:NERDTreeChDirMode=2
 let g:NERDTreeShowHidden=1
-let g:NERDTreeGitStatusNodeColorization = 1
 let g:NERDTreeGitStatusWithFlags = 0
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:NERDTreeGitStatusNodeColorization = 1
 let g:NERDTreeColorMapCustom = {
   \ "Modified"  : ["#ff8700", "208", "NONE", "NONE"],
   \ "Staged"    : ["#00875f", "029", "NONE", "NONE"],
   \ "Untracked" : ["#00af5f", "035", "NONE", "NONE"],
   \ "Dirty"     : ["#ff8700", "208", "NONE", "NONE"],
-  \ "Clean"     : ["#e4e4e4", "254", "NONE", "NONE"]
+  \ "Clean"     : ["#e4e4e4", "254", "NONE", "NONE"],
+  \ "Ignored"   : ["#808080", "NONE", "NONE", "NONE"]
   \ }
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:deoplete#enable_at_startup = 1
 let g:NERDSpaceDelims = 1
@@ -116,6 +116,6 @@ let g:lightline = {
   \ }
 \ }
 
-" NOTE: maybe in future: ultisnips, 
+" NOTE: maybe in future: ultisnips,
 " check youtube test traversal
 set termguicolors

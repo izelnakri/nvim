@@ -4,15 +4,16 @@ let mapleader = "\<Space>"
 let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'handlebars': ['ember-template-lint']
-\}
+\ }
 let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
-let g:ale_open_list = 'on_save' 
+let g:ale_open_list = 'on_save'
+
 " Includes
+" set shell=sh
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/functions.vim
 source ~/.config/nvim/bindings.vim
-
 set t_Co=256
 
 " Better line-height
@@ -28,7 +29,7 @@ set showcmd
 set cursorline
 
 syntax on
-filetype off 
+filetype off
 
 " General
 set path+=**
@@ -54,6 +55,7 @@ set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+set inccommand=nosplit
 
 " Colorschemes
 " gruvbox, inkpot, zenburn, hybrid_material
