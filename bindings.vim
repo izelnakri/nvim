@@ -10,6 +10,9 @@ command! -bar -nargs=1 -bang Write
 command! RmSwp
   \ execute '!rm /var/tmp/*.swp'
 
+command! Colors execute 'so $VIMRUNTIME/syntax/hitest.vim'
+
+
 " FZF commands
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
@@ -37,12 +40,14 @@ map qq         :bp<CR>:bd #<CR>
 map <silent> <M-a> gg<S-v>G
 inoremap <silent> <M-a> <Esc>gg<S-v>G
 map <silent> <C-s> %
+map <F7> gg=G<C-o><C-o>
 
 " Move vim copy to clipboard:
 " set clipboard+=unnamedplus
 set clipboard^=unnamed,unnamedplus
 
 nnoremap <Leader>s :%s//gc<left><left><left>
+nnoremap <Leader>/ :%s///gn<CR>
 nnoremap <Leader><C-s> :Far
 nnoremap <Leader>g :Far
 
@@ -108,3 +113,6 @@ nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 map <Leader>r :reg<CR>
+
+nmap <S-j> <Nop>
+

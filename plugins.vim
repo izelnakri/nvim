@@ -96,7 +96,8 @@ let g:lightline = {
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
-  \   'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]]
+  \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
+  \              [ 'percent' ] ]
   \ },
   \ 'component_function': {
   \   'gitbranch': 'fugitive#head',
