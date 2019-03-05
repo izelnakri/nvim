@@ -9,13 +9,15 @@ let s:color_white=' ctermfg=254 ctermbg=NONE cterm=NONE guifg=#E6E1C4 guibg=NONE
 exec 'hi typescriptFuncKeyword' . s:color_red
 exec 'hi typescriptOpSymbols' . s:color_red
 exec 'hi typescriptCommentTodo' . s:color_red
+exec 'hi typescriptIdentifier' . s:color_blue
 " exec 'hi javascriptAsyncFuncKeyword' . s:color_red
 " exec 'hi javascriptAwaitFuncKeyword' . s:color_red
 exec 'hi typescriptEndColons' . s:color_white
 
+highlight link typescriptReserved Identifier
 highlight link typescriptOperator Identifier
 highlight link typescriptLabel Identifier
 highlight link typescriptStorageClass Identifier
+highlight link typescriptLogicSymbols Identifier
 highlight link typescriptBraces Operator
 highlight link typescriptBracket Operator
-

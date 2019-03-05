@@ -3,9 +3,17 @@ let mapleader = "\<Space>"
 
 let g:ale_linters = {
 \  'javascript': ['eslint'],
+\  'typescript': ['eslint'],
 \  'handlebars': ['ember-template-lint']
 \ }
+let g:ale_fixers = {
+\  'javascript': ['prettier'],
+\  'typescript': ['prettier'],
+\  'elixir': ['mix format'],
+\  'rust': ['cargo fmt']
+\ }
 let g:ale_completion_enabled = 1
+let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_open_list = 'on_save'
 

@@ -71,6 +71,7 @@ let g:NERDTreeColorMapCustom = {
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:deoplete#enable_at_startup = 1
 let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 0
 
 " NerdTree opens automatically when open target is a directory:

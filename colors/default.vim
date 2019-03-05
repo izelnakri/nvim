@@ -52,9 +52,9 @@ hi SearchCurrent ctermfg=NONE ctermbg=107 cterm=NONE guifg=NONE guibg=#87af5f
 hi VertSplit ctermbg=234 ctermfg=234 guibg=#09251f guifg=#1c1c1c
 hi ColorColumn ctermbg=234 guibg=#1c1c1c
 hi Visual ctermbg=242 guibg=#0d372d
-set cc=100
+set cc=120
 
 hi Pmenu ctermbg=30 ctermfg=254 guifg=#E6E1C4 guibg=#008787
 hi PmenuSel ctermbg=37 ctermfg=254 guifg=#E6E1C4 guibg=#00afaf
-exec 'hi Title' . s:color_orange 
+exec 'hi Title' . s:color_orange
 " highlight PmenuSbar ctermbg=0 guibg=#d6d6d6
