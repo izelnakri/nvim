@@ -16,6 +16,7 @@ let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_open_list = 'on_save'
+let g:gundo_prefer_python3 = 1
 
 " Includes
 " set shell=sh

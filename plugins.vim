@@ -18,6 +18,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'jgdavey/tslime.vim'
 
 " Handyness
+Plug 'sjl/gundo.vim'
 Plug 'w0rp/ale'                                               " Linters
 Plug 'maximbaz/lightline-ale'
 Plug 'tpope/vim-fugitive'
@@ -42,6 +43,7 @@ Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer'
 Plug 'ervandew/supertab'
 Plug 'timakro/vim-searchant'
+Plug 'google/vim-searchindex'
 Plug 'janko-m/vim-test'
 
 call plug#end()

@@ -4,6 +4,8 @@ let mapleader = "\<Space>"
 vnoremap > >gv
 vnoremap < <gv
 
+inoremap jk <esc>
+
 command! -bar -nargs=1 -bang Write
   \ execute '!sudo touch %:p:h/'.(<q-args>)
 
@@ -76,6 +78,9 @@ map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 map <Leader>nf :NERDTreeFind<CR>
 map <Leader>nt :NERDTreeToggle<CR>
 nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p> " refreshes Nerdtree index
+
+" Gundo
+nnoremap <leader>u :GundoToggle<CR>
 
 " FZF - https://github.com/junegunn/fzf/blob/master/README-VIM.md
 function! FZFOpen(command_str)
