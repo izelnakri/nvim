@@ -4,16 +4,24 @@ let mapleader = "\<Space>"
 vnoremap > >gv
 vnoremap < <gv
 
+" what is this? investigate
 inoremap jk <esc>
 
 command! -bar -nargs=1 -bang Write
   \ execute '!sudo touch %:p:h/'.(<q-args>)
 
+" Removes annoying swap warnings
 command! RmSwp
   \ execute '!rm /var/tmp/*.swp'
 
+" shows colors
 command! Colors execute 'so $VIMRUNTIME/syntax/hitest.vim'
 
+" vim fugitive(git) go back binding to ..
+autocmd User fugitive
+  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
 
 " FZF commands
 command! -bang -nargs=* Ag
@@ -22,6 +30,7 @@ command! -bang -nargs=* Ag
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
 
+" Ripgrep
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
@@ -50,8 +59,8 @@ set clipboard^=unnamed,unnamedplus
 
 nnoremap <Leader>s :%s//gc<left><left><left>
 nnoremap <Leader>/ :%s///gn<CR>
-nnoremap <Leader><C-s> :Far
-nnoremap <Leader>g :Far
+" nnoremap <Leader><C-s> :Far
+" nnoremap <Leader>g :Far
 
 nmap <CR> o<Esc>
 " imap ii <Esc>
@@ -79,8 +88,12 @@ map <Leader>nf :NERDTreeFind<CR>
 map <Leader>nt :NERDTreeToggle<CR>
 nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p> " refreshes Nerdtree index
 
+" Neoclide Tab S-Tab Completion toggle
+imap <C-j> <Tab>
+imap <C-k> <S-Tab>
+
 " Gundo
-nnoremap <leader>u :GundoToggle<CR>
+" nnoremap <leader>u :GundoToggle<CR>
 
 " FZF - https://github.com/junegunn/fzf/blob/master/README-VIM.md
 function! FZFOpen(command_str)

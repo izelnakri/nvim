@@ -1,5 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
+" NOTE: Use more: vimux, multiple cursors, vim-test
+
 Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim' " TODO: customize this further Lead-P selection should prefill right side, advanced ripgrep, search/replace
 Plug 'tpope/vim-sensible'
@@ -7,28 +9,24 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'tsony-tsonev/nerdtree-git-plugin'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'brooth/far.vim'
-Plug 'tpope/vim-repeat'
-Plug 'lilydjwg/colorizer'
-Plug 'majutsushi/tagbar'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'benmills/vimux'
 Plug 'Yggdroot/indentLine'
-Plug 'jgdavey/tslime.vim'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Handyness
-Plug 'sjl/gundo.vim'
 Plug 'w0rp/ale'                                               " Linters
 Plug 'maximbaz/lightline-ale'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'                                 " GIT gutter
+Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'                                      " :Gbrowse
 Plug 'tpope/vim-eunuch'                                       " UNIX commands like :SudoWrite, :Rename, :Delete
 Plug 'tpope/vim-surround'                                     " cs$, cst$, ds$, ysiw$, Visual MODE: S$
 Plug 'terryma/vim-multiple-cursors'                           " NOTE: <C-n> is the magic
 Plug 'scrooloose/nerdcommenter'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
 Plug 'mustache/vim-mustache-handlebars'
@@ -41,17 +39,17 @@ Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'elixir' }
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer'
-Plug 'ervandew/supertab'
-Plug 'timakro/vim-searchant'
-Plug 'google/vim-searchindex'
+Plug 'ervandew/supertab'                                      " Perform all insert compl with tab
+Plug 'timakro/vim-searchant'                                  " Improved search highlighting
+Plug 'google/vim-searchindex'                                 " Shows count of matches
 Plug 'janko-m/vim-test'
 
 call plug#end()
 
 " Plugin configuration
-let g:test#strategy = "tslime"
-let g:tslime_always_current_session = 1
-let g:tslime_always_current_window = 1
+" let g:test#strategy = "tslime"
+" let g:tslime_always_current_session = 1
+" let g:tslime_always_current_window = 1
 let g:indentLine_char = '┆'
 let g:indentLine_color_term=235
 let g:indentLine_color_gui='#262626'
@@ -71,7 +69,7 @@ let g:NERDTreeColorMapCustom = {
   \ "Ignored"   : ["#808080", "NONE", "NONE", "NONE"]
   \ }
 let g:DevIconsEnableFoldersOpenClose = 1
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 0

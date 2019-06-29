@@ -10,8 +10,10 @@ exec 'hi javascriptFuncKeyword' . s:color_red
 exec 'hi javaScriptOpSymbols' . s:color_red
 exec 'hi javascriptCommentTodo' . s:color_red
 exec 'hi javascriptAsyncFuncKeyword' . s:color_red
-exec 'hi javascriptAwaitFuncKeyword' . s:color_red 
+exec 'hi javascriptAwaitFuncKeyword' . s:color_red
 exec 'hi javascriptEndColons' . s:color_white
 
 highlight link javascriptBraces Operator
 highlight link javascriptBrackets Operator
+
+" :so $VIMRUNTIME/syntax/hitest.vim
