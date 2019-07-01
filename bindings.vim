@@ -17,6 +17,9 @@ command! RmSwp
 " shows colors
 command! Colors execute 'so $VIMRUNTIME/syntax/hitest.vim'
 
+" copy filename
+command! Name execute ':!echo % | pbcopy'
+
 " vim fugitive(git) go back binding to ..
 autocmd User fugitive
   \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |

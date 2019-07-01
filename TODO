@@ -1,3 +1,9 @@
+- Git integration
+- toggle .gitignore based dirs from ripgrep and nerdtee with a keybinding
+- command line integration (for one of commands etc)
+- indentation aware paste
+
+
 - testing integration (Do this better on save for elixir + js) : smart lang based test, test file navigation, test case exec
 - ask Benny tagbar
 - Fix undo history + copy register history + advanced register
