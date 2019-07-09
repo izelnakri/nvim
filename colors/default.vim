@@ -65,7 +65,7 @@ hi DiffChange ctermfg=254 ctermbg=254 cterm=NONE guifg=#E6E1C4 guibg=#ff8700 gui
 hi DiffAdd ctermbg=22 ctermfg=254 cterm=NONE guibg=#005f00 guifg=#E6E1C4 gui=NONE
 hi DiffDelete ctermbg=88 ctermfg=254 cterm=NONE guibg=#870000 guifg=#E6E1C4 gui=NONE
 
-highlight GitGutterAdd    guifg=#00875f guibg=#00875f ctermfg=254 ctermbg=2
+highlight GitGutterAdd    guifg=#00875f guibg=#00875f  ctermfg=254 ctermbg=2
 highlight GitGutterChange guifg=#ff8700 guibg=#ff8700 ctermfg=254 ctermbg=3
 highlight GitGutterDelete guifg=#EF5D32 guibg=#EF5D32 ctermfg=254 ctermbg=1
-
+highlight HighlightedyankRegion guifg=NONE guibg=#00875f ctermfg=NONE ctermbg=2

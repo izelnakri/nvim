@@ -54,9 +54,9 @@ set t_Co=256o
 " Whitespace stuff
 set nowrap
 " set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab ts=2 sw=2 ai
+" set shiftwidth=2
+" set softtabstop=2
+set expandtab ts=2 sts=2 sw=2 ai
 set list
 set listchars=tab:\ \ ,trail:·
 " filetype plugin indent on

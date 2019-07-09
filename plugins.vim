@@ -31,7 +31,7 @@ Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
-Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
+Plug 'slashmili/alchemist.vim'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 " Plug 'HerringtonDarkholme/yats' " Typescript syntax
@@ -44,6 +44,10 @@ Plug 'timakro/vim-searchant'                                  " Improved search 
 Plug 'google/vim-searchindex'                                 " Shows count of matches
 Plug 'janko-m/vim-test'
 
+Plug 'junegunn/gv.vim'
+Plug 'nelstrom/vim-visual-star-search'
+Plug 'machakann/vim-highlightedyank'
+Plug 'jreybert/vimagit'
 call plug#end()
 
 " Plugin configuration

@@ -1,3 +1,9 @@
+" :retab! : convert tabs to spaces
+" :IEX - iex shell
+" * : makes word selection
+" Git shortcuts
+" Magit shortcuts and speed
+
 " Auto closing vim
 function! s:CloseIfOnlyControlWinLeft()
   if winnr("$") != 1
