@@ -9,8 +9,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'tsony-tsonev/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tsony-tsonev/nerdtree-git-plugin'
 Plug 'benmills/vimux'
 Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
@@ -20,7 +20,7 @@ Plug 'w0rp/ale'                                               " Linters
 Plug 'maximbaz/lightline-ale'
 Plug 'airblade/vim-gitgutter'                                 " GIT gutter
 Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'                                      " :Gbrowse
 Plug 'tpope/vim-eunuch'                                       " UNIX commands like :SudoWrite, :Rename, :Delete
@@ -38,6 +38,8 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'elixir' }
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'lmeijvogel/vim-yaml-helper'
+
 Plug 'racer-rust/vim-racer'
 Plug 'ervandew/supertab'                                      " Perform all insert compl with tab
 Plug 'timakro/vim-searchant'                                  " Improved search highlighting
@@ -47,7 +49,8 @@ Plug 'janko-m/vim-test'
 Plug 'junegunn/gv.vim'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'machakann/vim-highlightedyank'
-Plug 'jreybert/vimagit'
+Plug 'jreybert/vimagit', { 'branch': 'next' }
+
 call plug#end()
 
 " Plugin configuration
@@ -86,12 +89,20 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" Show yaml path of any key/value pair
+autocmd! InsertLeave *.yml YamlDisplayFullPath
+autocmd! CursorMoved *.yml YamlDisplayFullPath
+autocmd! InsertLeave *.yaml YamlDisplayFullPath
+autocmd! CursorMoved *.yaml YamlDisplayFullPath
+
 let g:rustfmt_autosave = 1
 
 " FZF configurations:
 let g:fzf_layout = { 'down': '~30%' }
 let g:fzf_files_options = ['--reverse']
 let g:fzf_action = { 'ctrl-t': 'tab split' }
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
 let $FZF_DEFAULT_OPTS = '--reverse'
 
 let g:SuperTabDefaultCompletionType = "<c-n>"

@@ -1,7 +1,19 @@
 " :retab! : convert tabs to spaces
-" :IEX - iex shell
+" :IEX - iex shell, add irb and node shell
 " * : makes word selection
-" Git shortcuts
+" :only
+" :Gvsplit branchname:filename
+" Git shortcuts [:Gread(revert), :Gwrite, :Gremove, :Gcommit, :Gdiff]
+" Gstatus [- key on files, C-n/C-p]
+" :Gedit :0 [staged version]
+" :Gdiff then :diffget, :diffput | use :dp for 3-way + :Gwrite to finish + !
+" Learn ripgrep and fzf better
+" investigate better merge conflicts [:ls, :diffget 2] :diffupdate [c ]c
+" :Gedit [sha]
+" for trees use this command: :edit %:h
+" for the commit object press S-c, for current just press :Gedit
+"
+" [q ]q  [Q ]Q
 " Magit shortcuts and speed
 
 " Auto closing vim
