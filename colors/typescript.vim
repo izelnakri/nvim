@@ -10,9 +10,18 @@ exec 'hi typescriptFuncKeyword' . s:color_red
 exec 'hi typescriptOpSymbols' . s:color_red
 exec 'hi typescriptCommentTodo' . s:color_red
 exec 'hi typescriptIdentifier' . s:color_blue
-" exec 'hi javascriptAsyncFuncKeyword' . s:color_red
-" exec 'hi javascriptAwaitFuncKeyword' . s:color_red
+exec 'hi typescriptAsyncFunc' . s:color_red
+exec 'hi typescriptAsyncFuncKeyword' . s:color_red
+exec 'hi typescriptTypeReference' . s:color_red
 exec 'hi typescriptEndColons' . s:color_white
+
+exec 'hi typescriptSuperBlock' . s:color_red
+exec 'hi typescriptInterpolationDelimiter' . s:color_orange
+exec 'hi typescriptAliasDeclaration' . s:color_orange
+" exec 'hi typescriptSpecial' . s:color_red
+" exec 'hi typescriptSource' . s:color_blue
+exec 'hi typescriptDecorators' . s:color_orange
+exec 'hi typescriptObjectLabel' . s:color_orange
 
 highlight link typescriptReserved Identifier
 highlight link typescriptOperator Identifier
@@ -21,3 +30,17 @@ highlight link typescriptStorageClass Identifier
 highlight link typescriptLogicSymbols Identifier
 highlight link typescriptBraces Operator
 highlight link typescriptBracket Operator
+
+hi link typescriptArrowFunc Identifier
+hi link typescriptSpecial Identifier
+hi link typescriptImport Identifier
+hi link typescriptExport Identifier
+hi link typescriptModule Identifier
+hi link typescriptDecorator Identifier
+hi link typescriptFuncType Identifier
+hi link typescriptCastKeyword Identifier
+
+exec 'hi typescriptArrowFuncArg' . s:color_blue
+exec 'hi typescriptFuncArg' . s:color_blue
+" this is function arguments:
+exec 'hi typescriptCall' . s:color_white

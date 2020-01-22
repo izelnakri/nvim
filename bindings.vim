@@ -18,7 +18,7 @@ command! RmSwp
 command! Colors execute 'so $VIMRUNTIME/syntax/hitest.vim'
 
 " copy filename
-command! Name execute ':!echo % | pbcopy'
+command! Name execute ':!echo % | xsel --clipboard --input'
 
 " vim fugitive(git) go back binding to ..
 autocmd User fugitive
@@ -78,8 +78,8 @@ map <F5> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 nmap <silent> <C-e>h :wincmd h<CR>
 nmap <silent> <C-e>l :wincmd l<CR>
 
-map <C-h>      :wincmd h<CR>
-map <C-l>      :wincmd l<CR>
+" map <C-h>      :wincmd h<CR>
+" map <C-l>      :wincmd l<CR>
 map <C-w>      <C-w><C-w>
 
 " Ctag navigation, ctrl+\ -> opens tag in new tab, Alt+] opens tag vsplit
@@ -137,3 +137,20 @@ map <Leader>r :reg<CR>
 
 nmap <S-j> <Nop>
 
+" Gitmerge bindings:
+map <Leader>1 :diffget LOCAL<CR>
+map <Leader>2 :diffget BASE<CR>
+map <Leader>3 :diffget REMOTE<CR>
+
+" Move lines
+" in Normal mode
+" nnoremap <C-j> :m .+1<CR>==
+" nnoremap <C-k> :m .-2<CR>==
+
+" in Insert mode
+inoremap <C-j> <ESC>:m .+1<CR>==gi
+inoremap <C-k> <ESC>:m .-2<CR>==gi
+
+" in Visual mode
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv

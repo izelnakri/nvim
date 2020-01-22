@@ -30,6 +30,7 @@ set guioptions-=r
 set guioptions-=L
 
 " Settings
+set undofile
 set nocompatible
 set hidden
 set ruler
@@ -46,10 +47,19 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 set backspace=indent,eol,start
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set undodir^=~/.vim/undo//
+
+" protect against crash-during-write
+set writebackup
+" but do not persist backup after successful write
+set nobackup
+" use rename-and-write-new method whenever safe
+set backupcopy=auto
 
 " Set encoding
 set encoding=utf-8
 set t_Co=256o
+
 
 " Whitespace stuff
 set nowrap

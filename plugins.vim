@@ -27,14 +27,12 @@ Plug 'tpope/vim-eunuch'                                       " UNIX commands li
 Plug 'tpope/vim-surround'                                     " cs$, cst$, ds$, ysiw$, Visual MODE: S$
 Plug 'terryma/vim-multiple-cursors'                           " NOTE: <C-n> is the magic
 Plug 'scrooloose/nerdcommenter'
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
+Plug 'othree/yajs.vim', { 'for': ['typescript', 'javascript'] }
+Plug 'othree/es.next.syntax.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 Plug 'slashmili/alchemist.vim'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-" Plug 'HerringtonDarkholme/yats' " Typescript syntax
 Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'elixir' }
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
@@ -80,6 +78,7 @@ let g:DevIconsEnableFoldersOpenClose = 1
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 0
+let g:mustache_abbreviations = 1
 
 " NerdTree opens automatically when open target is a directory:
 autocmd StdinReadPre * let s:std_in=1
