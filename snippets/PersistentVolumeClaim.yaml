@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+	name: ${1:name}
+	labels:
+		# insert any desired labels to identify your claim
+		app: ${2:app}
+		tier: ${3:tier}
+spec:
+	${4:storageClassName: ${5:standard}}
+	accessModes:
+		- ReadWriteOnce
+	resources:
+		requests:
+			storage: 20Gi

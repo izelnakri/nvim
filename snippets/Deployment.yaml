@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+	name: ${1:some-controller}
+	namespace: ${2:default}
+spec:
+	replicas: 1
+	selector:
+		matchLabels:
+			$3
+	template:
+		metadata:
+			labels:
+				${3:app: $1}
+		spec:
+			containers:
+			- name: ${4:name}
+				image: ${5:nginx}
+				imagePullPolicy: Always
+				resources:
+					requests:
+						cpu: 100m
+						memory: 200Mi
+				ports:
+				- containerPort: 8080

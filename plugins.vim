@@ -6,7 +6,7 @@ Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim' " TODO: customize this further Lead-P selection should prefill right side, advanced ripgrep, search/replace
 Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'commit': 'd48ab70' }
 Plug 'ryanoasis/vim-devicons', { 'commit': 'f17eb43' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Plug 'Xuyuanp/nerdtree-git-plugin'

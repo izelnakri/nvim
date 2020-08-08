@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+	name: ${1:frontend}
+	namespace: ${2:default}
+	labels:
+		app: ${3:someApp}
+		tier: ${4:frontend}
+spec:
+	ports:
+	- port: ${5:80}
+	selector:
+		app: $3
+		tier: $4

@@ -1,0 +1,18 @@
+apiVersion: batch/v2alpha1
+kind: CronJob
+metadata:
+	name: ${1:name}
+spec:
+	schedule: "${2:*/1} * * * *"
+	jobTemplate:
+		spec:
+			template:
+				spec:
+					containers:
+					- name: $1
+						image: ${3: image}
+						args: ${4:
+						- /bin/sh
+						- -c
+						- date; echo Hello from the Kubernetes cluster}
+					restartPolicy: OnFailure

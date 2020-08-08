@@ -1,0 +1,10 @@
+kind: ${1:Cluster}Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+	${2:namespace: ${3:default}
+	}name: ${4:configmap-updater}
+rules:
+- apiGroups: ["${5:}"]
+	resources: ["${6:configmaps}"]
+	resourceNames: ["${7:my-configmap}"]
+	verbs: [${8:"update", "get"}]

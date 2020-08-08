@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+	name: $1
+	namespace: $2
+spec:
+	tls:
+	- secretName: ${9:$8.tls}
+		hosts:
+		- $8
+	rules:
+	- host: ${8:host}
+		http:
+			paths:
+			- path: ${11:/}
+				backend:
+					serviceName: $1
+					servicePort: $7

@@ -91,3 +91,5 @@ set background=dark
 source ~/.config/nvim/colors/default.vim
 source ~/.config/nvim/colors/javascript.vim
 source ~/.config/nvim/colors/typescript.vim
+source ~/.config/nvim/snippets.vim
+set shell=sh
