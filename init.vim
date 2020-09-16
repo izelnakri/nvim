@@ -1,18 +1,30 @@
 " Important
 let mapleader = "\<Space>"
 
+autocmd FileType html.handlebars let g:ale_javascript_prettier_options = '--parser=glimmer'
+
 let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'typescript': ['eslint', 'tsserver'],
-\  'handlebars': ['ember-template-lint']
+\   'css': ['stylelint'],
+\   'scss': ['stylelint'],
+\   'html': [''],
+\   'html.handlebars': ['ember-template-lint'],
 \ }
 let g:ale_fixers = {
-\  'javascript': ['prettier'],
-\  'typescript': ['prettier'],
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier', 'eslint'],
+\  'typescript': ['prettier', 'eslint'],
+\   'html': [''],
+\  'html.handlebars': ['prettier', 'ember-template-lint'],
 \  'elixir': ['mix format'],
 \  'rust': ['cargo fmt']
 \ }
-let g:ale_completion_tsserver_autoimport = 1
+
+let g:ale_sign_error = '🍄'
+let g:ale_sign_warning = '🙀'
+
+" let g:ale_completion_tsserver_autoimport = 1
 let g:ale_completion_enabled = 1
 let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled = 1

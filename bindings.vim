@@ -126,6 +126,7 @@ nnoremap ln :lnext<CR>
 nnoremap lp :lprevious<CR>
 nnoremap lr :lrewind<CR>
 nnoremap lc :lclose<CR>
+nnoremap <leader>lf :ALEFix<CR>
 
 " Test bindings:
 nmap <silent> t<C-n> :TestNearest<CR>
