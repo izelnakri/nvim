@@ -94,3 +94,19 @@ nnoremap <silent> <leader>z :call <sid>zoom()<cr>
 "         return b:wordcount
 "     endif
 "   endfunction
+
+set path=.,src
+set suffixesadd=.js,.jsx
+
+function! LoadMainNodeModule(fname)
+    let nodeModules = "./node_modules/"
+    let packageJsonPath = nodeModules . a:fname . "/package.json"
+
+    if filereadable(packageJsonPath)
+        return a:fname . "/" . json_decode(join(readfile(packageJsonPath))).main
+    else
+        return a:fname
+    endif
+endfunction
+
+set includeexpr=LoadMainNodeModule(v:fname)

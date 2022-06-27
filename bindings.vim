@@ -1,8 +1,15 @@
+" zR open all folds, zM close all folds
+" [q previous quickfix item, ]q next quickfix item
+
 let mapleader = "\<Space>"
 
 " persist selection for indent/dedent
 vnoremap > >gv
 vnoremap < <gv
+
+" Should probably work, if it doesnt work remove this comment
+nnoremap ; :
+" nnoremap : ;
 
 " what is this? investigate
 inoremap jk <esc>
@@ -84,7 +91,7 @@ map <C-w>      <C-w><C-w>
 
 " Ctag navigation, ctrl+\ -> opens tag in new tab, Alt+] opens tag vsplit
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+" map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 " NERDTree
 map <Leader>nf :NERDTreeFind<CR>
@@ -138,6 +145,24 @@ map <Leader>r :reg<CR>
 
 nmap <S-j> <Nop>
 
+" select current word:
+map <Leader>8 *<S-n>
+
+" Gfigutive stuff
+map <Leader>gb :Git blame<CR>
+map <Leader>gs :Gstatus<CR>
+map <Leader>gl :0Glog<CR>
+map <Leader>gp :Glog<CR>
+map <Leader>mg :Magit<CR>
+map <Leader>q :q<CR>
+
+" Gfiguive like custom stuff:
+" map <Leader>
+" :sv !+git\ branch
+" https://neovim.io/doc/user/windows.html
+" https://github.com/tpope/vim-fugitive
+
+
 " Gitmerge bindings:
 map <Leader>1 :diffget LOCAL<CR>
 map <Leader>2 :diffget BASE<CR>
@@ -155,3 +180,19 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 " in Visual mode
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Coc shortcuts
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gD :call CocAction('jumpDefinition', 'tab drop')<CR>
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction

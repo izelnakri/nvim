@@ -6,14 +6,19 @@ Plug 'junegunn/fzf', { 'do' : './install --bin' }
 Plug 'junegunn/fzf.vim' " TODO: customize this further Lead-P selection should prefill right side, advanced ripgrep, search/replace
 Plug 'tpope/vim-sensible'
 Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree', { 'commit': 'd48ab70' }
-Plug 'ryanoasis/vim-devicons', { 'commit': 'f17eb43' }
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'scrooloose/nerdtree'
+" Plug 'ryanoasis/vim-devicons'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'scrooloose/nerdtree', { 'commit': 'd48ab70' }
+Plug 'ryanoasis/vim-devicons', { 'commit': 'f17eb43' }
 Plug 'tsony-tsonev/nerdtree-git-plugin'
-Plug 'benmills/vimux'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'benmills/vimux' " tmux integration, is this really needed(?)
 Plug 'Yggdroot/indentLine'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'metakirby5/codi.vim'
+" Plug 'justinmk/vim-sneak' " Trying
 
 " Handyness
 Plug 'w0rp/ale'                                               " Linters
@@ -38,16 +43,19 @@ Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'lmeijvogel/vim-yaml-helper'
 
-Plug 'racer-rust/vim-racer'
 Plug 'ervandew/supertab'                                      " Perform all insert compl with tab
 Plug 'timakro/vim-searchant'                                  " Improved search highlighting
 Plug 'google/vim-searchindex'                                 " Shows count of matches
-Plug 'janko-m/vim-test'
+" Plug 'janko-m/vim-test'
 
-Plug 'junegunn/gv.vim'
+Plug 'junegunn/gv.vim'                                        " Git browser Learn/Use this more
+Plug 'junegunn/vim-github-dashboard'                          " :GHD! matz | :GHA! matz|matz/mruby
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'machakann/vim-highlightedyank'
 Plug 'jreybert/vimagit', { 'branch': 'next' }
+Plug 'tpope/vim-dadbod'
+Plug 'github/copilot.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
@@ -106,17 +114,31 @@ let $FZF_DEFAULT_OPTS = '--reverse'
 
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
+function! LightlineCocCoverageStatus() abort
+  let status = get(g:, 'coc_coverage_lines_pct', '')
+  if empty(status)
+    return ''
+  endif
+
+  return '☂ ' . status . '% Lines Covered'
+endfunction
+
 let g:lightline = {
   \ 'colorscheme': 'powerline',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
-  \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
-  \              [ 'percent' ] ]
+  \   'right': [
+  \     [ 'coccoverage', 'lineinfo', 'cocstatus' ],
+  \     [ 'cocapollo' ],
+  \     [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
+  \     [ 'percent' ]
+  \   ]
   \ },
   \ 'component_function': {
-  \   'gitbranch': 'fugitive#head',
-  \   'relativeFileName': 'LightLineFilename'
+  \   'gitbranch': 'FugitiveHead',
+  \   'relativeFileName': 'LightLineFilename',
+  \   'coccoverage': 'LightlineCocCoverageStatus'
   \ },
   \ 'component_expand': {
   \  'linter_checking': 'lightline#ale#checking',
@@ -132,6 +154,9 @@ let g:lightline = {
   \ }
 \ }
 
+
 " NOTE: maybe in future: ultisnips,
 " check youtube test traversal
 set termguicolors
+
+" https://devhints.io/

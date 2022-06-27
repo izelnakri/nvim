@@ -1,6 +1,11 @@
 " Important
 let mapleader = "\<Space>"
 
+" DO this: https://www.youtube.com/watch?v=aHm36-na4-4  smart .swp navigation
+" Also add the plugin to make , to a bulleted list
+" Highlight sum, avg, min, max shown down for numbers in highlight, also adds to yank mode
+
+
 autocmd FileType html.handlebars let g:ale_javascript_prettier_options = '--parser=glimmer'
 
 let g:ale_linters = {
@@ -13,13 +18,15 @@ let g:ale_linters = {
 \ }
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier', 'eslint'],
+\   'javascript': ['eslint'],
 \  'typescript': ['prettier', 'eslint'],
 \   'html': [''],
-\  'html.handlebars': ['prettier', 'ember-template-lint'],
+\  'html.handlebars': ['prettier'],
 \  'elixir': ['mix format'],
 \  'rust': ['cargo fmt']
 \ }
+
+let g:sneak#label = 1
 
 let g:ale_sign_error = '🍄'
 let g:ale_sign_warning = '🙀'
@@ -97,6 +104,10 @@ set inccommand=nosplit
 " https://github.com/NLKNguyen/papercolor-theme
 
 command! MakeTags !ctags -R .
+
+" Code fold saving on sessions
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview
 
 set background=dark
 
