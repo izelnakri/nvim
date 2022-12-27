@@ -27,6 +27,11 @@ command! Colors execute 'so $VIMRUNTIME/syntax/hitest.vim'
 " copy filename
 command! Name execute ':!echo % | xsel --clipboard --input'
 
+" format code with Prettier
+" nnoremap gp :silent %!prettier --stdin-filepath %<CR>
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+
 " vim fugitive(git) go back binding to ..
 autocmd User fugitive
   \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
@@ -87,7 +92,7 @@ nmap <silent> <C-e>l :wincmd l<CR>
 
 " map <C-h>      :wincmd h<CR>
 " map <C-l>      :wincmd l<CR>
-map <C-w>      <C-w><C-w>
+nmap <C-w> :wincmd w<CR>
 
 " Ctag navigation, ctrl+\ -> opens tag in new tab, Alt+] opens tag vsplit
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -196,3 +201,6 @@ function! ShowDocumentation()
     call feedkeys('K', 'in')
   endif
 endfunction
+
+" Compile rmarkdown
+autocmd FileType rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>

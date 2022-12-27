@@ -13,7 +13,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons', { 'commit': 'f17eb43' }
 Plug 'tsony-tsonev/nerdtree-git-plugin'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'johnstef99/vim-nerdtree-syntax-highlight'
 Plug 'benmills/vimux' " tmux integration, is this really needed(?)
 Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
