@@ -69,3 +69,11 @@ highlight GitGutterAdd    guifg=#00875f guibg=#00875f  ctermfg=254 ctermbg=2
 highlight GitGutterChange guifg=#ff8700 guibg=#ff8700 ctermfg=254 ctermbg=3
 highlight GitGutterDelete guifg=#EF5D32 guibg=#EF5D32 ctermfg=254 ctermbg=1
 highlight HighlightedyankRegion guifg=NONE guibg=#00875f ctermfg=NONE ctermbg=2
+
+
+function s:CocHighlightHack()
+  hi! CocFadeOut ctermfg=137 ctermbg=NONE cterm=NONE guifg=#947659 guibg=NONE gui=NONE
+  hi! CocErrorHighlight ctermfg=137 ctermbg=NONE cterm=NONE guifg=#947659 guibg=NONE gui=NONE
+endfunction
+
+call s:CocHighlightHack()

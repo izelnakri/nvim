@@ -21,7 +21,7 @@ Plug 'metakirby5/codi.vim'
 " Plug 'justinmk/vim-sneak' " Trying
 
 " Handyness
-Plug 'w0rp/ale'                                               " Linters
+Plug 'dense-analysis/ale'
 Plug 'maximbaz/lightline-ale'
 Plug 'airblade/vim-gitgutter'                                 " GIT gutter
 Plug 'tpope/vim-fugitive'
@@ -42,6 +42,7 @@ Plug 'vim-erlang/vim-erlang-runtime', { 'for': 'elixir' }
 Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'lmeijvogel/vim-yaml-helper'
+Plug 'LnL7/vim-nix'
 
 Plug 'ervandew/supertab'                                      " Perform all insert compl with tab
 Plug 'timakro/vim-searchant'                                  " Improved search highlighting
@@ -54,7 +55,7 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'machakann/vim-highlightedyank'
 Plug 'jreybert/vimagit', { 'branch': 'next' }
 Plug 'tpope/vim-dadbod'
-Plug 'github/copilot.vim'
+Plug 'github/copilot.vim', { 'branch': 'release' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
