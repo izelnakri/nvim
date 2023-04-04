@@ -47,6 +47,7 @@ Plug 'LnL7/vim-nix'
 Plug 'ervandew/supertab'                                      " Perform all insert compl with tab
 Plug 'timakro/vim-searchant'                                  " Improved search highlighting
 Plug 'google/vim-searchindex'                                 " Shows count of matches
+Plug 'echasnovski/mini.nvim', { 'branch': 'stable' }
 " Plug 'janko-m/vim-test'
 
 Plug 'junegunn/gv.vim'                                        " Git browser Learn/Use this more
@@ -155,9 +156,19 @@ let g:lightline = {
   \ }
 \ }
 
+lua << EOF
+local map = require('mini.map')
+map.setup({
+  integrations = {
+    map.gen_integration.builtin_search(),
+    map.gen_integration.gitsigns(),
+    map.gen_integration.diagnostic(),
+  },
+})
+MiniMap.open()
+EOF
 
 " NOTE: maybe in future: ultisnips,
 " check youtube test traversal
 set termguicolors
-
 " https://devhints.io/

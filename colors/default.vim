@@ -1,4 +1,5 @@
 let s:color_darkblue=' ctermfg=024 ctermbg=NONE cterm=NONE guifg=#6C99BB guibg=NONE gui=NONE'
+let s:minimap_bg=' ctermfg=254 ctermbg=242 cterm=NONE guifg=#E6E1C4 guibg=#0d372d gui=NONE'
 let s:color_blue=' ctermfg=030 ctermbg=NONE cterm=NONE guifg=#7DAF9C guibg=NONE gui=NONE'
 let s:color_red=' ctermfg=124 ctermbg=NONE cterm=NONE guifg=#EF5D32 guibg=NONE gui=NONE'
 let s:color_orange=' ctermfg=208 ctermbg=NONE cterm=NONE guifg=#EFAC32 guibg=NONE gui=NONE'
@@ -70,6 +71,7 @@ highlight GitGutterChange guifg=#ff8700 guibg=#ff8700 ctermfg=254 ctermbg=3
 highlight GitGutterDelete guifg=#EF5D32 guibg=#EF5D32 ctermfg=254 ctermbg=1
 highlight HighlightedyankRegion guifg=NONE guibg=#00875f ctermfg=NONE ctermbg=2
 
+exec 'hi Pmenu' . s:minimap_bg
 
 function s:CocHighlightHack()
   hi! CocFadeOut ctermfg=137 ctermbg=NONE cterm=NONE guifg=#947659 guibg=NONE gui=NONE
