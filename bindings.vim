@@ -11,9 +11,6 @@ vnoremap < <gv
 nnoremap ; :
 " nnoremap : ;
 
-" what is this? investigate
-inoremap jk <esc>
-
 command! -bar -nargs=1 -bang Write
   \ execute '!sudo touch %:p:h/'.(<q-args>)
 

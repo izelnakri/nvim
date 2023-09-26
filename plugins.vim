@@ -30,7 +30,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'                                      " :Gbrowse
 Plug 'tpope/vim-eunuch'                                       " UNIX commands like :SudoWrite, :Rename, :Delete
 Plug 'tpope/vim-surround'                                     " cs$, cst$, ds$, ysiw$, Visual MODE: S$
-Plug 'terryma/vim-multiple-cursors'                           " NOTE: <C-n> is the magic
+Plug 'mg979/vim-visual-multi'                                 " NOTE: <C-n> is the magic
 Plug 'scrooloose/nerdcommenter'
 Plug 'othree/yajs.vim', { 'for': ['typescript', 'javascript'] }
 Plug 'othree/es.next.syntax.vim'
@@ -58,6 +58,14 @@ Plug 'jreybert/vimagit', { 'branch': 'next' }
 Plug 'tpope/vim-dadbod'
 Plug 'github/copilot.vim', { 'branch': 'release' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" TODO: Investigate these dap plguins again
+Plug 'mfussenegger/nvim-dap'
+Plug 'mxsdev/nvim-dap-vscode-js', { 'branch': 'main' }
+Plug 'rhysd/devdocs.vim'
+Plug 'vimwiki/vimwiki'
+
+" Plug 'carlosrocha/vim-chrome-devtools', { 'branch': 'main', 'do': 'bash install.sh' }
+" let g:node_host_prog = system('volta which neovim-node-host | tr -d "\n"')
 
 call plug#end()
 

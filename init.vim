@@ -5,7 +5,6 @@ let mapleader = "\<Space>"
 " Also add the plugin to make , to a bulleted list
 " Highlight sum, avg, min, max shown down for numbers in highlight, also adds to yank mode
 
-
 autocmd FileType html.handlebars let g:ale_javascript_prettier_options = '--parser=glimmer'
 
 let g:ale_linters = {
